@@ -18,7 +18,7 @@
 import physicalgraph.zigbee.zcl.DataType
 
 metadata {
-    definition (name: "Colory Bulb", namespace: "m-e-h", author: "m-e-h", runLocally: true, minHubCoreVersion: '000.019.00012', executeCommandsLocally: true) {
+    definition (name: "Colory Bulb", namespace: "m-e-h", author: "m-e-h") {
 
         capability "Actuator"
         capability "Color Control"
