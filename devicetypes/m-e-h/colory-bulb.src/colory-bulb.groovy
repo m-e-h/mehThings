@@ -24,6 +24,7 @@ metadata {
         capability "Color Control"
         capability "Color Temperature"
         capability "Configuration"
+        capability "Polling"
         capability "Refresh"
         capability "Switch"
         capability "Switch Level"
@@ -59,7 +60,7 @@ metadata {
                 attributeState "color", action:"color control.setColor"
             }
         }
-        controlTile("colorTempSliderControl", "device.colorTemperature", "slider", width: 4, height: 2, inactiveLabel: false, range:"(2700..6500)") {
+        controlTile("colorTempSliderControl", "device.colorTemperature", "slider", width: 4, height: 2, inactiveLabel: false, range:"(2200..6500)") {
             state "colorTemperature", action:"color temperature.setColorTemperature"
         }
         valueTile("colorName", "device.colorName", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
@@ -129,9 +130,6 @@ def parse(String description) {
 }
 
 def updateColor() {
-    if (!state?.color) state.color = "#FF0000" {
-        sendEvent(name: "color", value: value.hex, data: value)
-    }
 	sendEvent(name: "hue", value: state.hueValue, descriptionText: "Color has changed")
 	sendEvent(name: "saturation", value: state.saturationValue, descriptionText: "Color has changed", displayed: false)
 }
