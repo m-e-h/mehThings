@@ -1,5 +1,5 @@
 /**
- *  SmartThings Device Handler: Virtual 4-way button
+ *  SmartThings Device Handler: MEH 4-way btn
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -17,7 +17,7 @@
 
 
 metadata {
-	definition (name: "Virtual 4-way button", namespace: "m-e-h", author: "Marty Helmick") {
+	definition (name: "MEH 4-way btn", namespace: "m-e-h", author: "Marty Helmick") {
 		capability "Actuator"
 		capability "Door Control"
     	capability "Garage Door Control"
