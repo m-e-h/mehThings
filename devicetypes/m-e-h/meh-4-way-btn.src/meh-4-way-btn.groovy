@@ -20,14 +20,15 @@ metadata {
 	definition (name: "MEH 4-way btn", namespace: "m-e-h", author: "Marty Helmick") {
 		capability "Actuator"
 		capability "Door Control"
-    	capability "Garage Door Control"
+        capability "Garage Door Control"
+		capability "Contact Sensor"
 		capability "Refresh"
 		capability "Sensor"
         
-        command "closed_4"
         command "open_2"
         command "opening_1"
         command "closing_3"
+		command "closed_4"
 	}
 
 	simulator {
