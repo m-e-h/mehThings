@@ -17,7 +17,7 @@
 
 
 metadata {
-	definition (name: "Four Way Button", namespace: "smartthings", author: "Marty Helmick") {
+	definition (name: "Four Way Button", namespace: "m-e-h", author: "Marty Helmick") {
 		capability "Actuator"
 		capability "Door Control"
     capability "Garage Door Control"
