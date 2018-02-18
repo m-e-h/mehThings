@@ -36,23 +36,23 @@ metadata {
 
 	tiles {
 		standardTile("toggle", "device.door", inactiveLabel: true, width: 3, height: 3) {
-			state("opening", label:"1", icon:"st.Office.office6", backgroundColor:"#07F7D7")
-			state("open", label:"2", action:"door control.close", icon:"st.Health & Wellness.health8", backgroundColor:"#8CFC03")
-			state("closing", label:"3", icon:"st.Food & Dining.dining13", backgroundColor:"#5F07F7")
-			state("closed", label:"4", action:"door control.open", icon:"st.Food & Dining.dining1", backgroundColor:"#FC030F")
+			state("opening", label:"1", icon:"st.doors.garage.garage-opening", backgroundColor:"#07F7D7")
+			state("open", label:"2", action:"door control.close", icon:"st.doors.garage.garage-open", backgroundColor:"#8CFC03")
+			state("closing", label:"3", icon:"st.doors.garage.garage-closing", backgroundColor:"#5F07F7")
+			state("closed", label:"4", action:"door control.open", icon:"st.doors.garage.garage-closed", backgroundColor:"#FC030F")
 			
 		}
 		standardTile("open", "device.door", inactiveLabel: false, decoration: "flat") {
-			state "default", label:"Opening 1", action:"door control.open", icon:"st.Office.office6"
+			state "default", label:"Opening 1", action:"door control.open", icon:"st.doors.garage.garage-opening"
 		}
         standardTile("open_2", "device.door", inactiveLabel: false, decoration: "flat") {
-			state "default", label:"Open 2", action:"open_2", icon:"st.Health & Wellness.health8"
+			state "default", label:"Open 2", action:"open_2", icon:"st.doors.garage.garage-open"
 		}
 		standardTile("close", "device.door", inactiveLabel: false, decoration: "flat") {
-			state "default", label:"Closing 3", action:"door control.close", icon:"st.Food & Dining.dining13"
+			state "default", label:"Closing 3", action:"door control.close", icon:"st.doors.garage.garage-closing"
 		}
         standardTile("closed_4", "device.door", inactiveLabel: false, decoration: "flat") {
-			state "default", label:"Closed 4 ", action:"closed_4", icon:"st.Food & Dining.dining1"
+			state "default", label:"Closed 4 ", action:"closed_4", icon:"st.doors.garage.garage-closed"
 		}
 
 		main "toggle"
