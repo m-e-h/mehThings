@@ -20,7 +20,7 @@ metadata {
 	definition (name: "Four Way Button", namespace: "m-e-h", author: "Marty Helmick") {
 		capability "Actuator"
 		capability "Door Control"
-    capability "Garage Door Control"
+    	capability "Garage Door Control"
 		capability "Refresh"
 		capability "Sensor"
         
@@ -36,27 +36,27 @@ metadata {
 
 	tiles {
 		standardTile("toggle", "device.door", inactiveLabel: true, width: 3, height: 3) {
-			state("closed", label:"Hungry", action:"door control.open", icon:"st.Food & Dining.dining1", backgroundColor:"#FC030F")
-			state("open", label:"Not Hungry", action:"door control.close", icon:"st.Health & Wellness.health8", backgroundColor:"#8CFC03")
-			state("opening", label:"Breakfast", icon:"st.Office.office6", backgroundColor:"#07F7D7")
-			state("closing", label:"Dinner", icon:"st.Food & Dining.dining13", backgroundColor:"#5F07F7")
+			state("opening", label:"1", icon:"st.Office.office6", backgroundColor:"#07F7D7")
+			state("open", label:"2", action:"door control.close", icon:"st.Health & Wellness.health8", backgroundColor:"#8CFC03")
+			state("closing", label:"3", icon:"st.Food & Dining.dining13", backgroundColor:"#5F07F7")
+			state("closed", label:"4", action:"door control.open", icon:"st.Food & Dining.dining1", backgroundColor:"#FC030F")
 			
 		}
 		standardTile("open", "device.door", inactiveLabel: false, decoration: "flat") {
 			state "default", label:"Opening 1", action:"door control.open", icon:"st.Office.office6"
 		}
-		standardTile("close", "device.door", inactiveLabel: false, decoration: "flat") {
-			state "default", label:"Closing 3", action:"door control.close", icon:"st.Food & Dining.dining13"
-		}
         standardTile("open_2", "device.door", inactiveLabel: false, decoration: "flat") {
 			state "default", label:"Open 2", action:"open_2", icon:"st.Health & Wellness.health8"
+		}
+		standardTile("close", "device.door", inactiveLabel: false, decoration: "flat") {
+			state "default", label:"Closing 3", action:"door control.close", icon:"st.Food & Dining.dining13"
 		}
         standardTile("closed_4", "device.door", inactiveLabel: false, decoration: "flat") {
 			state "default", label:"Closed 4 ", action:"closed_4", icon:"st.Food & Dining.dining1"
 		}
 
 		main "toggle"
-		details(["toggle", "open", "close", "closed_4", "open_2"])
+		details(["toggle", "open", "open_2", "close", "closed_4"])
 	}
 }
 
@@ -72,18 +72,18 @@ def close() {
     sendEvent(name: "door", value: "closing")
 }
 
-def closed_4() {
-    sendEvent(name: "door", value: "closed")
+def opening_1() {
+    sendEvent(name: "door", value: "opening")
 }
 
 def open_2() {
     sendEvent(name: "door", value: "open")
 }
 
-def opening_1() {
-    sendEvent(name: "door", value: "opening")
-}
-
 def closing_3() {
     sendEvent(name: "door", value: "closing")
+}
+
+def closed_4() {
+    sendEvent(name: "door", value: "closed")
 }

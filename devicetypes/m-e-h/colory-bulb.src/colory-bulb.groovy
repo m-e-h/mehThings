@@ -1,5 +1,5 @@
 /**
- *  Copyright 2018 SmartThings
+ *  SmartThings Device Handler: Colory Bulb
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -10,15 +10,15 @@
  *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
  *  for the specific language governing permissions and limitations under the License.
  *
- *  Author: m-e-h
+ *  Author: Marty Helmick
  *  Date: 2018-02-04
  *
- *  This DTH should serve as the generic DTH to handle RGBW ZigBee HA devices
  */
+
 import physicalgraph.zigbee.zcl.DataType
 
 metadata {
-    definition (name: "Colory Bulb", namespace: "smartthings", author: "m-e-h") {
+    definition (name: "Colory Bulb", namespace: "m-e-h", author: "Marty Helmick") {
 
         capability "Actuator"
         capability "Color Control"
